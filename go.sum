@@ -1,0 +1,4 @@
+honnef.co/go/js/dom/v2 v2.0.0-20231030024858-cb489e859d05 h1:2oAZpAS3kW27fKB0zg0IO2ueZ0aZtjdBenVteKt52jg=
+honnef.co/go/js/dom/v2 v2.0.0-20231030024858-cb489e859d05/go.mod h1:+JtEcbinwR4znM12aluJ3WjKgvhDPKPQ8hnP4YM+4jI=
+marwan.io/wasm-fetch v0.1.0 h1:0kKeCsry7IQfPmxj78FUWtO6qwXIaQqMmZbzbZz2rkw=
+marwan.io/wasm-fetch v0.1.0/go.mod h1:PlaZmevjPJGIy/BaqMtVjUKvrA8CgrDh+aomnuhmTO8=
