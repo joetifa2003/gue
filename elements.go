@@ -6,6 +6,16 @@ import (
 	"honnef.co/go/js/dom/v2"
 )
 
+type InputElement struct {
+	BasicElement
+}
+
+func Input(children ...GueElement) *InputElement {
+	return &InputElement{
+		BasicElement: newBasicElement("input", children),
+	}
+}
+
 type TextElement struct {
 	BasicElement
 	Factory func(ctx context.Context) string

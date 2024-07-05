@@ -34,6 +34,8 @@ func main() {
 		return d["title"].(string), nil
 	})
 
+	inputValue := NewSignal("")
+
 	d := Div(
 		Button(
 			func(e dom.Event) {
@@ -49,11 +51,19 @@ func main() {
 			Text("+"),
 		),
 		Div(
-			Switch(func(ctx context.Context) AsyncState { return data.State.Get(ctx) }).
+			Input(
+				Event("input", func(e dom.Event) {
+					inputValue.Set(context.Background(), e.Target().(*dom.HTMLInputElement).Value())
+				}),
+			),
+		),
+		TextR(inputValue.Get),
+		Div(
+			Switch(data.State.Get).
 				When(AsyncStateLoading, func() GueElement { return Text("Loading...") }).
 				When(AsyncStateError, func() GueElement { return Text("Oops error!") }).
 				When(AsyncStateIdle, func() GueElement {
-					return TextR(func(ctx context.Context) string { return data.Value.Get(ctx) })
+					return TextR(data.Value.Get)
 				}),
 		),
 	)
